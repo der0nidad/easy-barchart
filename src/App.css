@@ -2,5 +2,11 @@
   text-align: center;
   margin: 24px auto;
   width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.chart {
   height: 500px;
 }

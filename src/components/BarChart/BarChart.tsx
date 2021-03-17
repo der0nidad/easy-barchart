@@ -8,7 +8,7 @@ type Data = {
 };
 type Props = {
   series: Data[];
-};
+} & React.HTMLAttributes<HTMLDivElement>;
 
 const BarChart: React.FC<Props> = ({ series }) => {
   if (series.length === 0) {
@@ -20,7 +20,10 @@ const BarChart: React.FC<Props> = ({ series }) => {
       {series.map((elem, index) => (
         <div
           className={styles.chart__element}
-          style={{ height: `${ratios[index]}%` }}
+          style={{
+            height: `${ratios[index]}%`,
+            width: `${90 / series.length}%`,
+          }}
         />
       ))}
     </div>

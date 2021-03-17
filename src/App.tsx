@@ -1,28 +1,20 @@
 import React from "react";
 import "./App.css";
 import BarChart from "./components/BarChart/BarChart";
+import { series, seriesLong } from "./mockStore/mockStore";
 
-const series = [
-  {
-    value: 12,
-  },
-  {
-    value: 85,
-  },
-  {
-    value: 129,
-  },
-  {
-    value: 6,
-  },
-  {
-    value: 78,
-  },
-];
 function App() {
   return (
     <div className="App">
-      <BarChart series={series} />
+      <div className="chart">
+        <BarChart series={series} />
+      </div>
+      <div className="chart">
+        <BarChart series={[]} />
+      </div>
+      <div className="chart">
+        <BarChart series={seriesLong} />
+      </div>
     </div>
   );
 }
